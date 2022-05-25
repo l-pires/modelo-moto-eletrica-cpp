@@ -1,3 +1,6 @@
+#ifndef __BATTERY_HPP
+#define __BATTERY_HPP
+
 #include <cstddef>
 
 class Battery {
@@ -13,3 +16,5 @@ class Battery {
     float getSoc();
     void *getHost();
 };
+
+#endif

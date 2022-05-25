@@ -1,3 +1,6 @@
+#ifndef __MOTORCYCLE_HPP
+#define __MOTORCYCLE_HPP
+
 #include <string.h>
 #include <cstddef>
 
@@ -25,3 +28,5 @@ class Motorcycle {
     void startBrake();
     void stopBrake();
 };
+
+#endif

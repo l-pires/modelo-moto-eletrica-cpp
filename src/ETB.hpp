@@ -1,3 +1,6 @@
+#ifndef __ETB_HPP
+#define __ETB_HPP
+
 #include <cstddef>
 
 #include "CP.hpp"
@@ -26,3 +29,5 @@ class ETB {
     void stopCharging(int index);
     int timeToCharged(int index);
 };
+
+#endif

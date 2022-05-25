@@ -1,3 +1,6 @@
+#ifndef __CP_HPP
+#define __CP_HPP
+
 #include <cstddef>
 #include "Battery.hpp"
 
@@ -18,3 +21,5 @@ class CP {
     Battery detach();
     int timeToCharged();
 };
+
+#endif
