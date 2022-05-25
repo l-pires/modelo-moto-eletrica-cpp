@@ -3,6 +3,8 @@
 
 #include <cstddef>
 
+#define MAX_SOC 100
+
 class Battery {
   private:
     long long int uid;
@@ -15,6 +17,8 @@ class Battery {
     long long int getUid();
     float getSoc();
     void *getHost();
+
+    float charge(float percent);
 };
 
 #endif

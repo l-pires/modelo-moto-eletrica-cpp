@@ -12,7 +12,7 @@ class Motorcycle {
   private:
     bool on; 
     char plate[8];
-    float speed, velocity;
+    float speed, acceleration;
     Battery * battery;
   public:
     Motorcycle(char * plate);
@@ -27,6 +27,8 @@ class Motorcycle {
     void accelerate();
     void startBrake();
     void stopBrake();
+
+    void update();
 };
 
 #endif

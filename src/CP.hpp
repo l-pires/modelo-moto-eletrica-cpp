@@ -20,6 +20,8 @@ class CP {
     void attach(Battery *battery);
     Battery * detach();
     int timeToCharged();
+
+    void charge(float percent);
 };
 
 #endif

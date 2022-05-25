@@ -28,6 +28,8 @@ class ETB {
     void startCharging(int index);
     void stopCharging(int index);
     int timeToCharged(int index);
+
+    void update();
 };
 
 #endif

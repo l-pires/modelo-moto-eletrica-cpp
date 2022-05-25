@@ -30,3 +30,9 @@ Battery * CP::detach() {
 int CP::timeToCharged() {
   return (int)((100.0 - this->battery->getSoc()) / CHARGE_PER_SEC);
 }
+
+void CP::charge(float percent) {
+  if(this->charging) 
+    if(this->battery->charge(percent) == MAX_SOC)
+      this->charging = false;
+}

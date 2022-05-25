@@ -25,3 +25,13 @@ float Battery::getSoc() {
 void * Battery::getHost() {
   return this->host;
 }
+
+float Battery::charge(float percent) {
+  this->soc += percent;
+  if(this->soc > MAX_SOC)
+    this->soc = MAX_SOC;
+  if(this->soc < 0)
+    this->soc = 0;
+  
+  return this->soc;
+}

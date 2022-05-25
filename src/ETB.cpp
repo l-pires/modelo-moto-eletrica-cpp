@@ -56,6 +56,9 @@ void ETB::setCharging(int index, bool charging) {
 }
 
 void ETB::startCharging(int index) {
+  if(this->getNofCharging() == CHARGE_CAPACITY)
+    throw "ETB is at it's maximum charge capacity.\n";
+
   this->setCharging(index, true);
 }
 
@@ -72,4 +75,9 @@ int ETB::timeToCharged(int index) {
     throw "Battery isn't charging.";
   
   return this->cps[index].timeToCharged();
+}
+
+void ETB::update() {
+  for(int i = 0; i < STORAGE_CAPACITY; i++)
+    this->cps[i].charge(0.05);
 }
