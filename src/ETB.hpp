@@ -24,7 +24,7 @@ class ETB {
     int getNofCharging();
 
     void attach(int index, Battery * battery);
-    Battery detach(int index);
+    Battery * detach(int index);
     void startCharging(int index);
     void stopCharging(int index);
     int timeToCharged(int index);

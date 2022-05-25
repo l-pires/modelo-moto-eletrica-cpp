@@ -37,7 +37,7 @@ void ETB::attach(int index, Battery * battery) {
   this->cps[index].attach(battery);
 }
 
-Battery ETB::detach(int index) {
+Battery * ETB::detach(int index) {
   if(index < 0 || index > STORAGE_CAPACITY - 1)
     throw "Index out of range.";
   if(this->cps[index].getBattery() == NULL)

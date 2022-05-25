@@ -21,8 +21,8 @@ void CP::attach(Battery *battery) {
   this->battery = battery;
 }
 
-Battery CP::detach() {
-  Battery b = *this->battery;
+Battery * CP::detach() {
+  Battery * b = this->battery;
   this->battery = NULL;
   return b;
 }

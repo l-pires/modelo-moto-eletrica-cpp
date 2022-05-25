@@ -18,7 +18,7 @@ class CP {
     Battery *getBattery();
 
     void attach(Battery *battery);
-    Battery detach();
+    Battery * detach();
     int timeToCharged();
 };
 
