@@ -11,7 +11,10 @@ class Battery {
     float soc;
     void *host;
   public:
+    Battery();
     Battery(long long int uid, float soc, void *host);
+    void setUid(long long int uid);
+
     void attach(void *host);
     void detach();
     long long int getUid();

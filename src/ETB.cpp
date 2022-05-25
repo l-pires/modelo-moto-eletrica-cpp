@@ -28,6 +28,15 @@ int ETB::getNofCharging() {
   return n;
 }
 
+Battery * ETB::getBattery(int index) {
+  if(index < 0 || index > STORAGE_CAPACITY - 1)
+    throw "Index out of range.";
+  if(this->cps[index].getBattery() == NULL)
+    throw "CP is empty.";
+  
+  return this->cps[index].getBattery();
+}
+
 void ETB::attach(int index, Battery * battery) {
   if(index < 0 || index > STORAGE_CAPACITY - 1)
     throw "Index out of range.";
@@ -75,6 +84,20 @@ int ETB::timeToCharged(int index) {
     throw "Battery isn't charging.";
   
   return this->cps[index].timeToCharged();
+}
+
+bool ETB::isEmpty(int index) {
+  if(index < 0 || index > STORAGE_CAPACITY - 1)
+    throw "Index out of range.";
+
+  return this->cps[index].getBattery() == NULL;
+}
+
+bool ETB::isCharging(int index) {
+  if(index < 0 || index > STORAGE_CAPACITY - 1)
+    throw "Index out of range.";
+
+  return this->cps[index].getCharging();
 }
 
 void ETB::update() {

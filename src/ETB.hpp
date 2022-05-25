@@ -22,12 +22,15 @@ class ETB {
     CP *getCps();
     int getNofStored();
     int getNofCharging();
+    Battery * getBattery(int index);
 
     void attach(int index, Battery * battery);
     Battery * detach(int index);
     void startCharging(int index);
     void stopCharging(int index);
     int timeToCharged(int index);
+    bool isEmpty(int index);
+    bool isCharging(int index);
 
     void update();
 };
