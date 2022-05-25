@@ -62,13 +62,15 @@ void Motorcycle::stopBrake() {
 
 void Motorcycle::update() {
   // Update state of charge
-  float soc;
-  if(this->on) {
-    float discharge = 0.01 + (this->speed/MAX_SPEED) * 
-      (this->speed/MAX_SPEED) * 0.05;
-    soc = this->battery->charge(-discharge);
-  } else {
-    soc = this->battery->charge(-0.01);
+  float soc = 0;
+  if(this->battery != NULL) {
+    if(this->on) {
+      float discharge = 0.01 + (this->speed/MAX_SPEED) * 
+        (this->speed/MAX_SPEED) * 0.05;
+      soc = this->battery->charge(-discharge);
+    } else {
+      soc = this->battery->charge(-0.01);
+    }
   }
   if(soc == 0) {
     this->on = false;
