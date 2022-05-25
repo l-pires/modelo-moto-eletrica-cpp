@@ -1,6 +1,8 @@
 #include <cstddef>
 #include "Battery.hpp"
 
+#define CHARGE_PER_SEC 0.05
+
 // Ponto de carga CP
 class CP {
   private:
@@ -14,4 +16,5 @@ class CP {
 
     void attach(Battery *battery);
     Battery detach();
+    int timeToCharged();
 };

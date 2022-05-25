@@ -26,3 +26,7 @@ Battery CP::detach() {
   this->battery = NULL;
   return b;
 }
+
+int CP::timeToCharged() {
+  return (int)((100.0 - this->battery->getSoc()) / CHARGE_PER_SEC);
+}
