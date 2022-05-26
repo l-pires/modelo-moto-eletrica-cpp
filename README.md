@@ -96,7 +96,22 @@ Representa uma moto elétrica.
 
 ### [`main.cpp`](https://github.com/l-pires/modelo-moto-eletrica-cpp/blob/main/src/main.cpp)
 
-Além das classes, foi implementado no projeto um programa que executa uma simulação teste predeterminada. 
+Além das classes, foi implementado no projeto um programa que executa uma simulação teste predeterminada. A simulação é feita a cada segundo e a cada 10 segundos é impresso na saída um relatório da forma:
+
+```bash
+< Tempo: Xmin Xs >
+
+Motorcycle plate: XXXXXXX
+Speed: XX.XX
+Attached battery UID: (XXXX | NONE) 
+Motorcycle battery SoC: XX.XX%
+
+ETB ID: XXX
+CP 1 [ battery UID (XXXX | NONE) | battery SoC (XX.XX% | NONE) | charging: (YES | NO) ]
+...
+CP N [ battery UID (XXXX | NONE) | battery SoC (XX.XX% | NONE) | charging: (YES | NO) ]
+______________________________________________________________
+```
 
 ___
 
