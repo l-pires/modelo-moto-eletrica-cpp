@@ -33,6 +33,7 @@ void Motorcycle::attach(Battery * battery) {
     throw "Battery slot is occupied.";
   
   this->battery = battery;
+  battery->attach(this);
 }
 
 Battery * Motorcycle::detach() {
@@ -41,6 +42,7 @@ Battery * Motorcycle::detach() {
   
   Battery * b = this->battery;
   this->battery = NULL;
+  b->detach();
   return b;
 }
 

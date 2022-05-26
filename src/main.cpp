@@ -143,9 +143,7 @@ int main() {
   etb.update();
   // Bateria adicionada ao ETB imediatamente
   Battery * tmp = moto.detach();
-  tmp->detach();
   etb.attach(6, tmp);
-  tmp->attach(&etb);
   etb.startCharging(6);
   // Report do minuto 30
   printReport(time, moto, etb);
@@ -159,9 +157,7 @@ int main() {
       // Tempo 30 minutos e 10 segundos
       // Bateria adicionada a moto imediatamente
       Battery * tmp = etb.detach(0);
-      tmp->detach();
       moto.attach(tmp);
-      tmp->attach(&moto);
 
       printReport(time, moto, etb);
     }

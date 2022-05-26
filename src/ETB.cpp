@@ -44,6 +44,7 @@ void ETB::attach(int index, Battery * battery) {
     throw "CP is occupied.";
   
   this->cps[index].attach(battery);
+  battery->attach(this);
 }
 
 Battery * ETB::detach(int index) {
@@ -52,7 +53,9 @@ Battery * ETB::detach(int index) {
   if(this->cps[index].getBattery() == NULL)
     throw "CP is empty.";
   
-  return this->cps[index].detach();
+  Battery * b = this->cps[index].detach();
+  b->detach();
+  return b;
 }
 
 void ETB::setCharging(int index, bool charging) {
