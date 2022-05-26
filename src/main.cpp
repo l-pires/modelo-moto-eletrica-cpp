@@ -13,13 +13,12 @@ void printMotorcycle(Motorcycle moto) {
   if(moto.getBattery() == NULL) {
     printf(
       "Attached battery UID: NONE\n"
-      "Motorcycle battery SoC: %.2f\n",
-      0.0 
+      "Motorcycle battery SoC: NONE\n"
     );
   } else {
     printf(
       "Attached battery UID: %lld\n"
-      "Motorcycle battery SoC: %.2f\n",
+      "Motorcycle battery SoC: %.2f%%\n",
       moto.getBattery()->getUid(),
       moto.getBattery()->getSoc()
     );
@@ -40,7 +39,7 @@ void printETB(ETB etb) {
       Battery b = *etb.getBattery(i);
       printf(
         "battery UID %lld | "
-        "battery SoC %.2f | ",
+        "battery SoC %.2f%% | ",
         b.getUid(), b.getSoc()
       );
       if(etb.isCharging(i))
